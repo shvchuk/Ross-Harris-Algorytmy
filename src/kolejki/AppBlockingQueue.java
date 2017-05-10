@@ -13,7 +13,6 @@ public class AppBlockingQueue {
         kolejka.enqueue(20);
         kolejka.enqueue(30);
         kolejka.dequeue();
-        kolejka.dequeue();
         kolejka.enqueue(11);
         kolejka.enqueue(12);
         kolejka.dequeue();
