@@ -1,5 +1,8 @@
 package kolejki;
 
+import listy.LinkedList;
+import listy.List;
+
 public class ListFifoQueue implements Queue {
 
     // lista na bazie której implementowana jest kolejka
@@ -20,26 +23,31 @@ public class ListFifoQueue implements Queue {
 
     @Override
     public void enqueue(Object value) {
+        _list.add(value);
 
     }
 
     @Override
     public Object dequeue() throws EmptyQueueException {
-        return null;
+        if(isEmpty()){
+            throw new EmptyQueueException();
+        }
+
+        return _list.delete(0);
     }
 
     @Override
     public void clear() {
-
+        _list.clear();
     }
 
     @Override
     public int size() {
-        return 0;
+        return _list.size();
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return _list.isEmpty();
     }
 }
